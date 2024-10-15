@@ -22,3 +22,11 @@ spec:
      containers:
       - name: node-app
         image: falamarcaodocker/kub-first-app
+        # Check container health
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            #  httpHeaders:
+          periodSeconds: 10 # how often that should be performed
+          initialDelaySeconds: 5 # wait to start checking health
