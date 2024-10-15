@@ -22,6 +22,7 @@ spec:
      containers:
       - name: node-app
         image: falamarcaodocker/kub-first-app
+        imagePullPolicy: Always # always pull the latest version (same behavior than adding the tag :latest to the image name)
         # Check container health
         livenessProbe:
           httpGet:
