@@ -4,6 +4,54 @@
 
 [Install kubectl](https://kubernetes.io/docs/tasks/tools/)
 
+
+## Example using Kubernetes commands
+
+```sh
+    # Build the image
+    docker build -t kub-first-app .
+
+    # Change the image name
+    docker tag kub-first-app falamarcaodocker/kub-first-app
+
+    # Login to Docker Hub
+    docker login
+
+    # Push the image
+    docker push falamarcaodocker/kub-first-app
+```
+
+```sh
+    kubectl create deployment first-app --image=falamarcaodocker/kub-first-app
+
+    kubctl expose deployment first-app --type=LoadBalancer  --port=8080
+
+    kubectl get deployments
+    kubectl get pods
+    kubectl get services
+
+    kubectl scale deployment/first-app --replicas=3
+
+    kubectl set image deploymeny/first-app kub-first-app=falamarcaodocker/kub-first-app:2
+
+```
+
+## Example using configuration YAML files
+
+```sh
+    # Build the image
+    docker build -t kub-first-app .
+
+    # Change the image name
+    docker tag kub-first-app falamarcaodocker/kub-first-app
+
+    # Login to Docker Hub
+    docker login
+
+    # Push the image
+    docker push falamarcaodocker/kub-first-app
+```
+
 ```sh
     # create deployment
     kubectl apply -f deployment.yaml
@@ -26,6 +74,7 @@
     # Delete
     kubectl delete -f deployment.yaml -f service.yaml
     kubectl delete -f deployment.yaml,service.yaml
+
 ```
 
 **Alternatively, you can use a single file**
@@ -39,4 +88,5 @@
 
     # Delete
     kubectl delete -f deployment-single-file.yaml
+    
 ```
