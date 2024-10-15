@@ -4,6 +4,11 @@
 
 [Install kubectl](https://kubernetes.io/docs/tasks/tools/)
 
+## Start Minikube
+
+```sh
+    minikube start
+```
 
 ## Example using Kubernetes commands
 
