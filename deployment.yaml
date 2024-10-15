@@ -2,12 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app-deployment
+  labels:
+    group: example
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: my-app
       tier: backend
+    # matchExpressions:
+    #   - {key: app, operator: NotIn, values: [my-app, node-app]}
+    #   - {key: app, operator: In, values: [my-app, node-app]}
   template:
     metadata:
       labels:

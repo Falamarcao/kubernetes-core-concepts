@@ -75,6 +75,9 @@
     kubectl delete -f deployment.yaml -f service.yaml
     kubectl delete -f deployment.yaml,service.yaml
 
+    # Or delete by label
+    kubectl delete deployments,services -l group=example
+
 ```
 
 **Alternatively, you can use a single file**
@@ -88,5 +91,5 @@
 
     # Delete
     kubectl delete -f deployment-single-file.yaml
-    
+
 ```
