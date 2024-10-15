@@ -22,8 +22,10 @@
 ```
 
 ```sh
+    # Create deployment
     kubectl create deployment first-app --image=falamarcaodocker/kub-first-app
 
+    # Create service
     kubctl expose deployment first-app --type=LoadBalancer  --port=8080
 
     kubectl get deployments
